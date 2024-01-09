@@ -14,12 +14,14 @@ function App() {
   })
 
   const investmentResults = calculateInvestmentResults(investmentInputs);
-  
+
+  const isValidInput = ()=>+investmentInputs.duration > 0;
   return (
     <>
       <Header />
       <InvestmentInput setInvestments = {setInvestmentInput}/>
-      <Results results = {investmentResults}/>
+      {!isValidInput() && <p className='center'>Please enter a duration greater than zero.</p>}
+      {isValidInput() && <Results results = {investmentResults}/>}
     </>
   )
 }
