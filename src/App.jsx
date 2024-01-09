@@ -16,6 +16,7 @@ function App() {
   const investmentResults = calculateInvestmentResults(investmentInputs);
 
   const isValidInput = ()=>+investmentInputs.duration > 0;
+  
   return (
     <>
       <Header />
