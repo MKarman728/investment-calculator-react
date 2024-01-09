@@ -7,17 +7,19 @@ import { calculateInvestmentResults } from "./util/investment";
 
 function App() {
   const [investmentInputs, setInvestmentInput] = useState({
-    'initial-investment':'',
-    'annual-investment':'',
-    'expected-investment':'',
+    'initialInvestment':'',
+    'annualInvestment':'',
+    'expectedReturn':'',
     'duration':''
   })
+
+  const investmentResults = calculateInvestmentResults(investmentInputs);
   
   return (
     <>
       <Header />
       <InvestmentInput setInvestments = {setInvestmentInput}/>
-      <Results results = {investmentInputs}/>
+      <Results results = {investmentResults}/>
     </>
   )
 }
